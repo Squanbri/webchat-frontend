@@ -1,0 +1,30 @@
+.messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.messageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 82px;
+  border-bottom: 2px solid #ebeefb;
+  padding-left: 40px;
+  padding-right: 72px;
+}
+.messageHeader h1 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 42px;
+  align-self: center;
+}
+.messageHeader span {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.messageContain {
+  display: flex;
+  height: calc(100vh - 82px);
+}

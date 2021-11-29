@@ -1,0 +1,66 @@
+.profile {
+  border-left: 2px solid #ebeefb;
+  display: flex;
+  flex-direction: column;
+  width: 22%;
+  overflow: auto;
+}
+
+.blockTop {
+  min-height: 279px;
+  border-bottom: 2px solid #ebeefb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.login {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: #C8CBD8;
+}
+
+.blockBottom {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+}
+
+.blockBottom h4 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+
+.blockBottom small {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #C8CBD8;
+  margin-bottom: 10px;
+}
+
+.blockBottom span {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #2D2D2D;
+  margin-bottom: 30px;
+}

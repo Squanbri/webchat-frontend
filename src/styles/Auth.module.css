@@ -1,0 +1,65 @@
+.blockLeft {
+  width: 51%;
+  background-image: url('../assets/image/auth_image.png');
+  background-repeat: no-repeat;
+  background-position: 70% max(350px, 65%);
+  background-color: #F7F8FC;
+}
+
+.blockLeft h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 20vh 0 0 30%;
+}
+.blockLeft h1 em {
+  font-weight: 500;
+  color: #7AB2F6;
+  font-style: normal;
+  border-bottom: 2px solid #7AB2F6;
+}
+.blockLeft p{
+  width: 60%;
+  margin: 34px 0 0 30%;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.blockRight {
+  padding: 18vh min(77px, 5%);
+}
+
+.blockRight h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+small:nth-child(2) {
+  display: block;
+  margin-bottom: 60px;
+}
+
+small:nth-child(2) em {
+  cursor: pointer;
+  font-style: normal;
+  margin-left: 5px;
+  color: #7AB2F6;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.blockRight small:last-child {
+  display: block;
+  max-width: 398px;
+  margin-top: 20px;
+  color: #c4c4c4;
+}
+
+.blockRight small:last-child em {
+  color: #7AB2F6;
+  opacity: .65;
+  font-style: normal;
+  cursor: pointer;
+}

@@ -1,0 +1,97 @@
+.sidebar {
+  position: fixed;
+  height: 100vh;
+  width: 130px;
+  background-color: #2D2D2D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+  left: 0px;
+}
+
+.logo {
+  margin: 40px 40px 70px 40px;
+}
+
+.menu {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu li {
+  width: 110px;
+  height: 54px;
+  cursor: pointer;
+  padding: 11px 29px 0 49px;
+  transition: border-width 0.1s linear;
+}
+
+.menu li:hover {
+  border-left: 3px solid #7AB2F6;
+  padding: 11px 29px 0 46px;
+}
+
+.menu .active li {
+  background: linear-gradient(to left, rgba(122, 178, 246, 0.2), rgba(196, 196, 196, 0));
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-left: 3px solid #7AB2F6;
+  padding: 11px 29px 0 46px;
+}
+
+.menu li svg path {
+  transition: fill .2s ease-in-out;
+}
+
+.menu a:nth-child(2) svg path {
+  fill: rgba(0,0,0, 0) !important;
+}
+.menu a:not(:nth-child(2)) svg path {
+  stroke: rgba(0,0,0, 0) !important;
+}
+
+.menu li:hover svg path {
+  fill: #7AB2F6;
+}
+
+.menu a:nth-child(2):hover svg path {
+  stroke: #7AB2F6;
+}
+
+
+
+.menu a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.question,
+.questionActive {
+  position: absolute;
+  bottom: 100px;
+  display: block;
+  cursor: pointer;
+}
+
+.question path {
+  transition: stroke .2s ease-in-out;
+}
+
+.question:hover path {
+  stroke: #7AB2F6;
+}
+
+.questionActive path {
+  stroke: #7AB2F6;
+}
+
+.active path {
+  stroke: #7AB2F6;
+  fill: #7AB2F6;
+}

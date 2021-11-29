@@ -1,0 +1,47 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.input {
+  width: 398px;
+  height: 61px;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  border: 2px solid #dee1ed;
+  border-radius: 10px;
+}
+
+.input:active,
+.input:focus,
+.input:focus-visible {
+  outline: none;
+}
+
+.input::placeholder {
+  color: #C8CBD8;;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.passwordEye {
+  position: absolute;
+  right: 6px;
+  top: 54px;
+  width: 50px;
+  fill: rgba(0,0,0, .25);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.passwordEye:hover {
+  background-color: rgba(0,0,0, 0.05);
+  border-radius: 50px;
+}

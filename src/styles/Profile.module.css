@@ -1,0 +1,148 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100vw - 130px);
+  height: 82px;
+  border-bottom: 2px solid #ebeefb;
+  padding: 0 70px 0 40px;
+}
+
+.header h3 {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.header span {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.body {
+  height: 100%;
+  padding: 40px 23vw;
+}
+
+.blockTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  height: 140px;
+  width: 140px;
+  background-color: red;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.blockTop .name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.blockTop .login {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #C8CBD8;
+  margin-bottom: 20px;
+}
+
+.blockInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  border-top: 2px solid #ebeefb;
+  border-bottom: 2px solid #ebeefb;
+  margin: 0 10vw;
+}
+
+.blockInfo h3 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+
+.blockInfo small {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #C8CBD8;
+  margin-bottom: 10px;
+}
+
+.blockInfo span {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  margin: 0 10vw; 
+}
+
+.buttons button:first-child {
+  position: relative;
+  display: block;
+  margin: 20px 0;
+}
+
+.buttons button:last-child {
+  position: relative;
+  display: block;
+  margin: 20px 0;
+  background-color: #fff;
+  color: #ebeefb;
+  border: 2px solid #ebeefb !important;
+}
+
+.blockInfoEdit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.blockInfoEdit div {
+  width: 100%;
+  margin: 0;
+}
+
+.blockInfoEdit div input {
+  width: 100%;
+}
+
+.blockInfoEdit div:nth-child(1),
+.blockInfoEdit div:nth-child(2) {
+  width: calc(50% - 20px);
+}
+
+.blockInfoEdit {
+  margin-bottom: 40px;
+}
+
+.profileEmail {
+  margin-bottom: 10px !important;
+}
+
+.profileAvatar {
+  width: 140px;
+}

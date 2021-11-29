@@ -1,0 +1,47 @@
+.main {
+  background-image: url('../assets/image/main_image.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.block {
+  margin: 20vh 0 0 15vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.block h1 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.block h1 em {
+  color: #79b2f5;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.block p {
+  color: #C4C4C4;
+  width: 29vw;
+  margin: 20px 0;
+}
+
+.block button {
+  width: 398px;
+  margin-bottom: 120px;
+}
+
+.block small {
+  color: #C8CBD8;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.block small em {
+  color: #79b2f5;
+  font-style: normal;
+}

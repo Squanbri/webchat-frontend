@@ -1,0 +1,52 @@
+.errorsContainer {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 30%;
+  z-index: 10000;
+}
+
+.error {
+  height: 50px;
+  width: min(50vw, 550px);
+  font-size: 14px;
+  background-color: rgb(253, 237, 237);
+  color: rgb(95, 33, 32);
+  border-radius: 4px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-image: url('../assets/icons/error.svg');
+}
+
+.errorIcon {
+  fiLL: #f06361;
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
+}
+
+.text {
+  font-weight: 500;
+}
+
+.close {
+  position: absolute;
+  right: 16px;
+  fill: RGB(94, 33, 32);
+  cursor: pointer;
+  box-sizing:content-box;
+  padding: 6px;
+  width: 18px;
+  height: 18px;
+}
+
+.close:hover {
+  border-radius: 50px;
+  background-color: rgba(0,0,0, 0.04);
+}
