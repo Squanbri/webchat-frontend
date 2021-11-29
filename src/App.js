@@ -31,7 +31,7 @@ const App = observer(() => {
             </>
           ) : (
             <>
-              <Route path="/profile" element={<Auth />} />
+              <Route path="/auth" element={<Auth />} />
               <Route path="/messages" element={<Main />} />
             </>
           )

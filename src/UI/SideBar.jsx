@@ -19,7 +19,7 @@ const SideBar = observer(() => {
         <LogoIcon className={styles.logo} />
   
         <ul className={styles.menu}>
-          <NavLink  to="/profile" className={({ isActive }) => isActive ? styles.active : ''}>
+          <NavLink  to="/auth" className={({ isActive }) => isActive ? styles.active : ''}>
             <li>
               <ProfileIcon/>
             </li>

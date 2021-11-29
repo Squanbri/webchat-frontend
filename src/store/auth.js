@@ -18,7 +18,19 @@ class Auth {
       localStorage.setItem('auth_key', `${email}&${password}`)
       this.setAuth(true)
       this.user = new User(res)
+    } 
+    else return false
+  }
+
+  async registration(email, password) {
+    const res = await AuthService.registration(email, password)
+    
+    if (res !== undefined) {
+      localStorage.setItem('auth_key', `${email}&${password}`)
+      this.setAuth(true)
+      this.user = new User(res)
     }
+    else return false
   }
 
   async logout() {

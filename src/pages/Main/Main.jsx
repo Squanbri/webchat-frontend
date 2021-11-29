@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useNavigate } from "react-router-dom";
 import { observer } from 'mobx-react-lite';
 
 import { Context } from '../../index';
@@ -7,6 +8,7 @@ import Button from '../../UI/Button';
 
 const Main = observer(() => {
   const { auth } = useContext(Context)
+  const navigate  = useNavigate();
 
   return (
     <section className={styles.main}>
@@ -18,7 +20,7 @@ const Main = observer(() => {
         <p>Наш чат является крупнешим хабом, где группы людей могут  достигать настоящего дзена в своей работе.</p>
 
         {auth.isAuth === false &&
-          <Button>Создать аккаунт</Button>
+          <Button onClick={() => navigate('/auth')}>Создать аккаунт</Button>
         }
 
         <small><em>Спонсоры:</em> к сожалению, отсутствуют :( </small>

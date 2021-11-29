@@ -4,7 +4,7 @@ import Errors from "../store/errors";
 export default class AuthService {
   static async login(email, password) {
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth`, {email, password})
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth/auth`, {email, password})
 
       return response.data
     } catch (e) {
@@ -12,13 +12,15 @@ export default class AuthService {
     }
   }
 
-  // static async logout() {
-  //   try {
+  static async registration(email, password) {
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth/registration`, {email, password})
 
-  //   } catch (e) {
-
-  //   }
-  // }
+      return response.data
+    } catch (e) {
+      Errors.setErrors(e.response)
+    }
+  }
 
   static async checkAuth() {
     try {
