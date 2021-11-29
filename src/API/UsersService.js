@@ -4,7 +4,7 @@ import Errors from "../store/errors";
 export default class UsersService {
   static async fetchUsers() {
     try {
-      const response = await axios.get(`123/api/users`)
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/users`)
 
       return response.data
     } catch (e) {
