@@ -4,7 +4,7 @@ import Errors from "../store/errors";
 export default class AuthService {
   static async login(email, password) {
     try {
-      const response = await axios.post(`http://localhost:5000/api/auth`, {email, password})
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth`, {email, password})
 
       return response.data
     } catch (e) {

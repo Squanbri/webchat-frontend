@@ -4,7 +4,7 @@ import Errors from "../store/errors";
 export default class UsersService {
   static async fetchUsers() {
     try {
-      const response = await axios.get(`http://localhost:5000/api/users`)
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/users`)
 
       return response.data
     } catch (e) {
@@ -14,7 +14,7 @@ export default class UsersService {
   
   static async updateUser(id, firstName, lastName, email, password, phone, city) {
     try {
-      const response = await axios.put(`http://localhost:5000/api/users`, {id, firstName, lastName, email, password, phone, city})
+      const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/users`, {id, firstName, lastName, email, password, phone, city})
 
       return response.data
     } catch (e) {
