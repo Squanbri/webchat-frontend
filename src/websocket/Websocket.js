@@ -8,7 +8,7 @@ const Websocket = observer(() => {
 
   useEffect(() => {
     if (auth?.user) {
-      const socket = new WebSocket(`wss://${process.env.REACT_APP_BACKEND_HOST_NAME}`)
+      
     
       socket.onopen = () => {
         const msg = {
