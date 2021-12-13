@@ -9,7 +9,7 @@ export default class WebSocket {
   }
 
   setSocket(id) {
-    this.socket = new WebSocket('ws://localhost:5000/')
+    this.socket = new WebSocket(`wss://${process.env.REACT_APP_BACKEND_HOST_NAME}`)
 
     this.socket.onopen = () => {
       const msg = {
