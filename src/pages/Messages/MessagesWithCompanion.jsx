@@ -9,15 +9,42 @@ import {ReactComponent as SendIcon} from '../../assets/icons/send.svg';
 import styles from '../../styles/MessagesWithCompanion.module.css';
 
 const MessagesCompanion = observer(() => {
-  const { users } = useContext(Context)
+  const { users, auth } = useContext(Context)
   const { selectUser } = users
 
   const [message, setMessage] = useState('')
 
-  const sendMessage = () => {
-    users.sendMessage(message)
-    setMessage('')
+  const keyDown = e => {
+    if(e.keyCode === 13){
+      e.preventDefault()
+      sendMessage()
+    }
   }
+
+  const sendMessage = () => {
+    if (message.trim() !== '') {
+      users.sendMessage(message)
+      setMessage('')
+
+      const socket = new WebSocket('ws://localhost:5000/')
+      socket.onopen = () => {
+        socket.send(JSON.stringify({
+          method: 'message',
+          data: {
+            fromId: auth?.user.id,
+            id: users?.selectUser?.id,
+            message
+          }
+        }))
+        users.fetchUser(users?.selectUser?.id)
+        socket.close()
+      }
+
+      const messages = document.querySelector('.MessagesWithCompanion_messages__OchZ-')
+      messages.scroll(0, messages.scrollHeight)
+    }
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -31,13 +58,14 @@ const MessagesCompanion = observer(() => {
 
       <div className={styles.footer}>
         <div className={styles.avatarNearInput}>
-          <Avatar/>
+          <Avatar src={auth.user?.avatar}/>
         </div>
         
         <TextArea 
           placeholder={'Напишите сообщение...'}
           value={message}
           onChange={e => setMessage(e.target.value)}
+          onKeyDown={e => keyDown(e)}
         />
 
         <SendIcon 

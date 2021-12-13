@@ -12,9 +12,19 @@ export default class MessagesService {
     }
   }
 
-  static async getUnchecked(userId1, userId2) {
+  static async getUnchecked(userId2, userId1) {
     try {
       const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/messages/unchecked`, {userId1, userId2})
+
+      return response.data
+    } catch (e) {
+      Errors.setErrors(e.response)
+    }
+  }
+
+  static async checkAllMessages(userId1, userId2) {
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/messages/checkAll`, {userId1, userId2})
 
       return response.data
     } catch (e) {

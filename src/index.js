@@ -2,6 +2,7 @@ import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
+import Websocket from './websocket/Websocket';
 import Auth from "./store/auth";
 import Errors from "./store/errors";
 import Users from './store/users';
@@ -16,6 +17,7 @@ ReactDOM.render(
     errors: Errors,
   }}>
     <App />
+    <Websocket/>
   </Context.Provider>,
   document.getElementById('root')
 );

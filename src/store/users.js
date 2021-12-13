@@ -23,10 +23,21 @@ class Users {
       const users = response.users
 
       const {_id} = await AuthService.checkAuth()
+      console.log(_id)
       this.id = _id
 
       users.filter(user => user._id !== this.id)
           .forEach(user => this.setUser(user))
+    }
+  }
+
+  async fetchUser(id) {
+    const response = await UsersService.fetchUser(id)
+
+    if (response) {
+      const user = response.user
+      
+      this.setUser(user)
     }
   }
 
@@ -42,6 +53,11 @@ class Users {
     const user = this.users.get(id)
     this.selectUser = user
     this.fetchMessages(id)
+  }
+
+  setUserOnline(id, online) {
+    const user = this.users.get(id)
+    user.online = online
   }
 
   setMessage(item) {

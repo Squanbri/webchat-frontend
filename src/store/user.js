@@ -12,6 +12,8 @@ class User {
     this.password = user?.password
     this.city = user?.city
     this.phone = user?.phone
+    this.avatar = user?.avatar
+    this.online = user?.online || false
 
     this.lastMessage = null
     this.timeLastMessage = null
@@ -65,7 +67,7 @@ class User {
     this.setLastMessage(lastMessage?.text)
     this.setTimeLastMessage(lastMessage?.created_at)
 
-    const uncheckedMessages = await MessagesService.getUnchecked(id, this.id)
+    const uncheckedMessages = await MessagesService.getUnchecked(this.id, id)
     this.setUnchecked(uncheckedMessages)
   }
 

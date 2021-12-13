@@ -13,6 +13,11 @@ const Profile = observer(() => {
 
   const [formEdit, setFormEdit] = useState(false)
 
+  const changeHandler = async e => {
+    await auth.uploadAvatar(e.target.files[0])
+    window.location.reload();
+  }
+
   return (
     <section className={styles.profile}>
       <div className={styles.header}>
@@ -23,7 +28,18 @@ const Profile = observer(() => {
       <div className={styles.body}>
         <div className={styles.blockTop}>
           <div className={styles.profileAvatar}>
-            <Avatar/>
+            <Avatar src={user?.avatar}/>
+            {formEdit && (
+              <div className={styles.avatarUpload}>
+                <input 
+                  type="file" 
+                  id="photo" 
+                  name="photo" 
+                  onChange={changeHandler}
+                />
+                <label htmlFor="photo"></label>
+              </div>
+            )}
           </div>
 
           <span className={styles.name}>{user?.firstName} {user?.lastName}</span>

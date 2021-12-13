@@ -145,4 +145,29 @@
 
 .profileAvatar {
   width: 140px;
+  height: 140px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.avatarUpload input {
+  display: none;
+}
+
+.avatarUpload label {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  display: block;
+  background-image: url('../assets/icons/edit.svg');
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  /* background-color: red; */
+}
+
+.avatarUpload label:hover {
+  outline: 3px solid #fff;
+  border-radius: 50px;
+  stroke: #fff;
 }

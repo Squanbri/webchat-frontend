@@ -9,8 +9,8 @@ class Errors {
   }
 
   static setErrors(response) {
-    const errors = response.data.errors
-    errors.forEach(error => this.setError(error))
+    const errors = response?.data?.errors
+    errors?.forEach(error => this.setError(error))
   }
 
   static setError(error) {

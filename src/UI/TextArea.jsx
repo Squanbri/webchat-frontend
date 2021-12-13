@@ -2,12 +2,18 @@ import React, {useState} from 'react';
 import _uniqueId from 'lodash/uniqueId';
 import styles from '../styles/TextArea.module.css'
 
-const TextArea = ({label, placeholder, value, onChange}) => {
+const TextArea = ({label, placeholder, value, onChange, onKeyDown}) => {
   const [id] = useState(_uniqueId('TextArea-'));
   
   const onChangeEvent = e => {
     if (typeof onChange === 'function') {
       onChange(e)
+    }
+  }
+
+  const onKeyDownEvent = e => {
+    if (typeof onChange === 'function') {
+      onKeyDown(e)
     }
   }
 
@@ -28,6 +34,7 @@ const TextArea = ({label, placeholder, value, onChange}) => {
         placeholder={placeholder}
         value={value}
         onChange={e => onChangeEvent(e)}
+        onKeyDown={e => onKeyDownEvent(e)}
       /> 
     </div>
   )

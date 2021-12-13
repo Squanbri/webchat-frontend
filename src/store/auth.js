@@ -1,6 +1,8 @@
 import { makeAutoObservable } from 'mobx';
 
 import AuthService from '../API/AuthService';
+import UsersService from '../API/UsersService';
+
 import User from './user';
 
 class Auth {
@@ -11,13 +13,18 @@ class Auth {
     makeAutoObservable(this)
   }
 
+  setUser(user) {
+    this.user = user
+  }
+
   async login(email, password) {
     const res = await AuthService.login(email, password)
-    
+
     if (res !== undefined) {
       localStorage.setItem('auth_key', `${email}&${password}`)
       this.setAuth(true)
-      this.user = new User(res)
+      const user = new User(res)
+      this.setUser(user)
     } 
     else return false
   }
@@ -28,7 +35,8 @@ class Auth {
     if (res !== undefined) {
       localStorage.setItem('auth_key', `${email}&${password}`)
       this.setAuth(true)
-      this.user = new User(res)
+      const user = new User(res)
+      this.setUser(user)
     }
     else return false
   }
@@ -42,6 +50,13 @@ class Auth {
     const response = await AuthService.checkAuth()
     if (response) {
       this.login(response.email, response.password)
+    }
+  }
+
+  async uploadAvatar(file) {
+    const response = await UsersService.uploadAvatar(file, this.user?.id)
+    if (response) {
+      this.checkAuth()
     }
   }
 

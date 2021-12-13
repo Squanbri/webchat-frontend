@@ -11,7 +11,7 @@ const Message = ({message, user}) => {
   return (
     <div className={styles.message}>
       <div className={styles.avatar}>
-        <Avatar/>
+        <Avatar src={user?.avatar}/> 
       </div>
 
       <div className={styles.content}>

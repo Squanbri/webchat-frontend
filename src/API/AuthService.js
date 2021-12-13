@@ -25,6 +25,7 @@ export default class AuthService {
   static async checkAuth() {
     try {
       const authKey = localStorage.getItem('auth_key')
+      console.log(authKey)
       if (authKey) {
         const [email, password] = authKey.split('&')
         const response = await this.login(email, password)

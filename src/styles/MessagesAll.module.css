@@ -1,4 +1,5 @@
 .messagesAll {
+  overflow: auto;
   width: max(23%, 440px);
   background-color: #F7F8FC;
 }

@@ -9,7 +9,22 @@ const Companion = observer(({ user, select, onClick }) => {
   const lastTime = user?.timeLastMessage
   const month = monthsTitle[new Date(lastTime).getMonth()]
   const day = new Date(lastTime).getDate() < 10 ? `0${new Date(lastTime).getDate()}` : new Date(lastTime).getDate()
+  const differenceMinutes = Math.floor((new Date() - new Date(lastTime)) / 60_000)
   
+  let timeLastMessage
+  if (differenceMinutes < 1) {
+    timeLastMessage = `Сейчас`
+  }
+  else if (differenceMinutes < 60) {
+    timeLastMessage = `${differenceMinutes} м. назад`
+  }
+  else if (differenceMinutes < 1440) {
+    timeLastMessage = `${Math.floor(differenceMinutes / 60)} ч. назад`
+  }
+  else {
+    timeLastMessage = `${day} ${month}`
+  }
+
   return (
     <div 
       className={ select
@@ -19,7 +34,7 @@ const Companion = observer(({ user, select, onClick }) => {
       onClick={onClick}
     >
       <div className={styles.companionAvatar}>
-        <Avatar/>
+        <Avatar online={user?.online} src={user?.avatar} />
       </div>
 
       <div className={styles.middleCompanionBlock}>
@@ -29,7 +44,7 @@ const Companion = observer(({ user, select, onClick }) => {
 
       <div className={styles.rightCompanionBlock}>
         {lastTime && 
-          <span className={styles.companionMessageTime}>{day} {month}</span>
+          <span className={styles.companionMessageTime}>{timeLastMessage}</span>
         }
         {user.isUnchecked &&
           <span className={styles.companionMessageCount}>{user.unchecked}</span>

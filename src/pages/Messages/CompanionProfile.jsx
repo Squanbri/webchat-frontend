@@ -13,7 +13,7 @@ const CompanionProfile = observer(() => {
     <div className={styles.profile}>
       <div className={styles.blockTop}>
         <span className={styles.avatar}>
-          <Avatar/>
+          <Avatar online={selectUser?.online} src={selectUser?.avatar} />
         </span>
         <span className={styles.name}>{selectUser?.firstName} {selectUser?.lastName}</span>
         {/* <small className={styles.login}>@squanbri</small> */}
