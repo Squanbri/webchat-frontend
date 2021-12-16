@@ -11,7 +11,7 @@ const MessagesList = observer(() => {
   return (
     <>
       {users.messageList.map(message =>
-        message.from === auth.user.id 
+        message.from === auth.user?.id 
           ? <Message key={message.id} message={message} user={auth.user} />
           : <Message key={message.id} message={message} user={selectUser} />  
       )}

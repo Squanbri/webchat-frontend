@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 
 import { Context } from '../../index';
@@ -12,6 +12,7 @@ const MessagesCompanion = observer(() => {
   const { users, auth } = useContext(Context)
   const { selectUser } = users
 
+  const messagesEndRef = useRef(null);
   const [message, setMessage] = useState('')
 
   const keyDown = e => {
@@ -39,11 +40,14 @@ const MessagesCompanion = observer(() => {
         users.fetchUser(users?.selectUser?.id)
         socket.close()
       }
-
-      const messages = document.querySelector('.MessagesWithCompanion_messages__OchZ-')
-      messages.scroll(0, messages.scrollHeight)
+      // const messages = document.querySelector('.MessagesWithCompanion_messages__OchZ-')
+      // messages?.scroll(0, messages.scrollHeight)
     }
   }
+
+  useEffect(() => {
+    messagesEndRef.current?.scroll(0, messagesEndRef.current?.scrollHeight)
+  }, [users.messageList])
 
   return (
     <div className={styles.container}>
@@ -52,7 +56,10 @@ const MessagesCompanion = observer(() => {
         {/* <small className={styles.online}>был в сети 5 мин назад</small> */}
       </div>
 
-      <div className={styles.messages}>
+      <div 
+        className={styles.messages}  
+        ref={messagesEndRef}
+      >
         <MessagesList/>
       </div>
 

@@ -18,7 +18,7 @@ const CompanionList = observer(({search = ''}) => {
 
   return (
     <>
-      {users.list.filter(user => `${user.firstName.toUpperCase()} ${user.lastName?.toUpperCase() ?? ''}`.indexOf(search.toUpperCase()) > -1 && user.id !== auth.user.id)
+      {users.list.filter(user => `${user.firstName.toUpperCase()} ${user.lastName?.toUpperCase() ?? ''}`.indexOf(search.toUpperCase()) > -1 && user.id !== auth.user?.id)
         .map(user =>
           <Companion 
             user={user}
